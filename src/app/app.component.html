@@ -6,23 +6,5 @@
 </header>
 
 <main>
-  <form class="todo-form" (ngSubmit)="create(); todoForm.reset()" #todoForm="ngForm">
-    <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="New ToDo" required>
-    <button type="submit" [disabled]="todoForm.form.invalid">ADD TODO</button>
-  </form>
-
-  <section class="todo-list" *ngIf="todos.length">
-    <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ 'completed': todo.completed }">
-      <button class="checkbox icon" (click)="toggle(todo)">
-        <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
-      </button>
-      <span class="title">{{ todo.title }}</span>
-
-      <div class="action">
-        <button class="delete icon" (click)="delete(todo)">
-          <i class="material-icons">delete</i>
-        </button>
-      </div>
-    </div>
-  </section>
+		<todo></todo>
 </main>
